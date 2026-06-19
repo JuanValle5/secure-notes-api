@@ -1,0 +1,134 @@
+# ==================================================
+# Maven
+# ==================================================
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# ==================================================
+# Spring Boot
+# ==================================================
+HELP.md
+
+# Archivos de configuración locales (opcional)
+application-local.yml
+application-local.yaml
+application-local.properties
+
+# Variables de entorno
+.env
+.env.*
+
+# ==================================================
+# IntelliJ IDEA
+# ==================================================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Archivos de compilación
+out/
+
+# SonarLint
+.idea/sonarlint/
+
+# Database Tools
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Editor
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
+
+# ==================================================
+# VS Code
+# ==================================================
+.vscode/
+
+# ==================================================
+# Eclipse / STS
+# ==================================================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# ==================================================
+# NetBeans
+# ==================================================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ==================================================
+# OS Files
+# ==================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==================================================
+# Java
+# ==================================================
+*.class
+*.jar
+*.war
+*.ear
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# ==================================================
+# PostgreSQL / Bases de datos locales
+# ==================================================
+*.db
+*.sqlite
+*.sqlite3
+
+# Dumps
+*.sql
+*.dump
+*.backup
+
+# ==================================================
+# Cobertura y pruebas
+# ==================================================
+coverage/
+jacoco.exec
+/site/
+
+# ==================================================
+# Docker (si lo usas)
+# ==================================================
+docker-compose.override.yml
+
+# ==================================================
+# Archivos sensibles
+# ==================================================
+secrets/
+*.key
+*.pem
+*.p12
+*.jks

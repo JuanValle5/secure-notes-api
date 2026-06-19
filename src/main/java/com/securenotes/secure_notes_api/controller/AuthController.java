@@ -1,6 +1,8 @@
 package com.securenotes.secure_notes_api.controller;
 
+import com.securenotes.secure_notes_api.dto.request.LoginRequest;
 import com.securenotes.secure_notes_api.dto.request.RegisterRequest;
+import com.securenotes.secure_notes_api.dto.response.LoginResponse;
 import com.securenotes.secure_notes_api.dto.response.UserResponse;
 import com.securenotes.secure_notes_api.service.AuthService;
 import jakarta.validation.Valid;
@@ -25,4 +27,20 @@ public class AuthController {
                 request
         );
     }
+
+    @PostMapping("/login")
+    public LoginResponse login(
+
+            @RequestBody
+            @Valid
+            LoginRequest request
+
+    ) {
+
+        return authService.login(
+                request
+        );
+    }
+
+
 }

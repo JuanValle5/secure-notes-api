@@ -1,6 +1,8 @@
 package com.securenotes.secure_notes_api.service.impl;
 
+import com.securenotes.secure_notes_api.dto.request.LoginRequest;
 import com.securenotes.secure_notes_api.dto.request.RegisterRequest;
+import com.securenotes.secure_notes_api.dto.response.LoginResponse;
 import com.securenotes.secure_notes_api.dto.response.UserResponse;
 import com.securenotes.secure_notes_api.entity.Role;
 import com.securenotes.secure_notes_api.entity.User;
@@ -8,6 +10,8 @@ import com.securenotes.secure_notes_api.repository.RoleRepository;
 import com.securenotes.secure_notes_api.repository.UserRepository;
 import com.securenotes.secure_notes_api.service.AuthService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +30,8 @@ public class AuthServiceImpl
     private final RoleRepository roleRepository;
 
     private final PasswordEncoder passwordEncoder;
+
+    private final AuthenticationManager authenticationManager;
 
     @Override
     public UserResponse register(
@@ -67,6 +73,23 @@ public class AuthServiceImpl
                 saved.getId(),
                 saved.getUsername(),
                 saved.getEmail()
+        );
+    }
+
+    @Override
+    public LoginResponse login(
+            LoginRequest request
+    ) {
+
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.email(),
+                        request.password()
+                )
+        );
+
+        return new LoginResponse(
+                "Login successful"
         );
     }
 }
